@@ -15,7 +15,7 @@
 <div class="for-group">
     <label>Keterangan</label>
     <input type="hidden" name="id_brg" class="form-control" 
-    value="<?php echo $brg->nama_brg?>">
+    value="<?php echo $brg->id_brg?>">
     <input type="text" name="keterangan" class="form-control" 
     value="<?php echo $brg->keterangan ?>">
 </div>
