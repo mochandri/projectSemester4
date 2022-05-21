@@ -1,3 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -8,10 +33,10 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon">
+                <div class="sidebar-brand-icon ">
                 <i class="fa-solid fa-store"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">RIZKY CAKES <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">RizkyCake's</div>
             </a>
 
             <!-- Divider -->
@@ -29,21 +54,21 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                KATEGORI
+                KATERGORI
             </div>
 
-          
+           
+
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
-                <i class="fa-solid fa-pie"></i>
-                    <span>Kue Kering</span></a>
+                <i class="fa-thin fa-cake-candles"></i>
+                    <span>Kue Tart</span></a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
-                <i class="fa-solid fa-cake-candles"></i>
-                    <span>Kue Tart</span></a>
+                <i class="fa-duotone fa-cake-slice"></i>
+                    <span>Kue Kering</span></a>
             </li>
 
             <!-- Divider -->
@@ -54,12 +79,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+         
 
         </ul>
         <!-- End of Sidebar -->
@@ -119,9 +139,10 @@
                             </div>
                         </li>
 
+                      
+
                     
 
-                  
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
