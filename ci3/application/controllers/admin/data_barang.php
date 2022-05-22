@@ -63,7 +63,7 @@ redirect('admin/data_barang/index');
         'keterangan'    =>$keterangan, 
         'kategori'      =>$kategori,
         'harga'         =>$harga,
-        'stok'          =>$stok,
+        'stok'          =>$stok
         
     );
     $where = array(

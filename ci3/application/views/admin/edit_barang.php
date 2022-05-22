@@ -38,7 +38,7 @@
     value="<?php echo $brg->stok ?>">
 </div>
 
-<button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+<button type="submit" class="btn btn-primary btn-sm mb-3">Simpan</button>
 
 </form>
 
