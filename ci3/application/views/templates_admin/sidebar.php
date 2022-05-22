@@ -55,12 +55,12 @@
             <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('admin/data_barang') ?>">
                 <i class="fa-thin fa-database"></i>
-                    <span>Data Kue</span></a>
+                    <span>Data Barang</span></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/invoices') ?>">
-                <i class="fa-duotone fa-file-invoice"></i>
-                    <span>Invoices</span></a>
+            <a class="nav-link" href="<?php echo base_url('admin/invoice') ?>">
+                <i class="fas fa-fw fa-file-invoice"></i>
+                    <span>Invoice</span></a>
             </li>
 
             <!-- Divider -->
