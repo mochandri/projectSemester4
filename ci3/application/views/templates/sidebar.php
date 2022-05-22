@@ -141,11 +141,11 @@
 
                         <div class="navbar">
                             <ul class="nav navbar-nav navbar-right">
-                                 <li>
+                                <li>
                                     <?php
-                                    $keranjangs = 'Keranjang Belanja: ' .$this->cart->total_items(). 'items'
-                                    ?>
-                                    <?php echo anchor ('dashboard/detail_keranjang',$keranjangs) ?>
+                                    $keranjang ='Keranjang Belanja : '.$this->cart->total_items(). 'items' ?>
+
+                                    <?php echo $keranjang ?>
                                 </li>
                             </ul>
                         </div>
