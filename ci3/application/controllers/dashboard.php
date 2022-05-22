@@ -10,6 +10,7 @@ class dashboard extends CI_Controller{
         $this->load->view('dashboard', $data);
         $this->load->view('templates/footer');
     }
+<<<<<<< Updated upstream
     public function tambah_ke_keranjang($id){
         $barang = $this->model_barang->find($id);
         $data = array(
@@ -24,4 +25,10 @@ class dashboard extends CI_Controller{
         redirect('dashboard');
     }
     
+=======
+    public function tambah_ke_keranjang(){
+        $barang = $this->model_barang->find($id);
+    
+    }
+>>>>>>> Stashed changes
 }
