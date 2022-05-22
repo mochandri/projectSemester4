@@ -14,7 +14,7 @@ class dashboard extends CI_Controller{
         $barang = $this->model_barang->find($id);
         $data = array(
             'id'    =>  $barang->id_brg,
-            'qyt'   =>  1,
+            'qty'   =>  1,
             'price' =>  $barang->harga,
             'name'  =>  $barang->nama_brg
 
