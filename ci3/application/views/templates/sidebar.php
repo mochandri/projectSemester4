@@ -146,7 +146,7 @@
                                     $keranjang = 'Keranjang Belanja:' .$this->cart->total_items
                                     (). 'items'
                                     ?>
-                                    <?php echo $keranjang?>
+                                    <?php echo $keranjang ?>
                                 </li>
                             </ul>
                         </div>
@@ -190,4 +190,4 @@
                     </ul>
 
                 </nav>
-                <!-- End of Topbar -->
+                <!-- End of Topbar --> 
