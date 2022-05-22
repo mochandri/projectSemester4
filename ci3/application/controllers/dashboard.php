@@ -15,15 +15,20 @@ class dashboard extends CI_Controller{
         $barang = $this->model_barang->find($id);
        
         $data = array(
+
             'id'    =>  $barang->id_brg,
             'qty'   =>  1,
             'price' =>  $barang->harga,
             'name'  =>  $barang->nama_brg
 
 
-        );
-        $this->cart->insert($data);
-        redirect('dashboard');
+            
+            
+    );
+    
+    $this->cart->insert($data);
+    redirect('dashboard');
+
     }
     public function detail_keranjang(){
         $this->load->view('templates/header');
