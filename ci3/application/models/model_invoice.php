@@ -11,7 +11,7 @@ class Model_invoice extends CI_Model{
             'nama'      => $nama,
             'alamat'    => $alamat,
             'tgl_pesan' => date('Y-m-d H:i:s'),
-            'batas_bayar'   => date('Y-m-d H:i:s', mktime(date('H'), date('i'),date('s'), date('m'), date('d') + 1, date('Y'))),
+            'batas_bayar'   => date('Y-m-d H:i:s', mktime(date('H'), date('i'),date('s'), date('m'), date('d') + 1, date('Y')))
 
     );
     $this->db->insert('tb_invoice', $invoice);
@@ -23,7 +23,7 @@ class Model_invoice extends CI_Model{
             'id_brg'        => $item['id'],
             'nama_brg'      => $item['name'],
             'jumlah'        => $item['qty'],
-            'harga'         => $item['price'],
+            'harga'         => $item['price']
         );
         $this->db->insert('tb_pesanan', $data);
     }
