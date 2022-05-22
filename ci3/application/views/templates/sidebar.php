@@ -139,13 +139,20 @@
                             </div>
                         </li>
 
+
                         <div class="navbar">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <?php
+<<<<<<< HEAD
                                     $keranjang ='Keranjang Belanja : '.$this->cart->total_items(). 'items' ?>
 
                                     <?php echo $keranjang ?>
+=======
+                                    $keranjang = 'Keranjang Belanja: ' .$this->cart->total_items(). 'items'
+                                    ?>
+                                    <?php echo anchor ('dashboard/detail_keranjang',$keranjang) ?>
+>>>>>>> 72a415c1d7cd032d4f0b14b4bf8f148f482aba9f
                                 </li>
                             </ul>
                         </div>
