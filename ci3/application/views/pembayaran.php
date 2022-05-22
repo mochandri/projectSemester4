@@ -27,7 +27,7 @@
         <input type="text" name="nama" placeholder="Nama Lengkap Anda" class="form-control">
     </div>
 
-        <div class="form-group">
+    <div class="form-group">
         <label>Alamat Lengkap</label>
         <input type="text" name="alamat" placeholder="Alamat Lengkap Anda" class="form-control">
     </div>
