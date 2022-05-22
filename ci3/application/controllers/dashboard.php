@@ -10,11 +10,13 @@ class dashboard extends CI_Controller{
         $this->load->view('dashboard', $data);
         $this->load->view('templates/footer');
     }
-    public function tambah_ke_keranjang($id){
+    public function tambah_ke_keranjang($id)
+    {
         $barang = $this->model_barang->find($id);
+       
         $data = array(
             'id'    =>  $barang->id_brg,
-            'qyt'   =>  1,
+            'qty'   =>  1,
             'price' =>  $barang->harga,
             'name'  =>  $barang->nama_brg
 
