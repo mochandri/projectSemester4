@@ -61,12 +61,12 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('kategori/tart') ?>">
                 <i class="fa-thin fa-cake-candles"></i>
                     <span>Kue Tart</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('kategori/kering') ?>">
                 <i class="fa-duotone fa-cake-slice"></i>
                     <span>Kue Kering</span></a>
             </li>

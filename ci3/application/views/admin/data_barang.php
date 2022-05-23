@@ -48,13 +48,16 @@
 
             </div>
             <div class="form=group">
-                <label>Keterangan</label>
+                <label>Keterangan</label> <br>
                 <input type="text" name="keterangan" class="form-control">
 
             </div>
             <div class="form=group">
                 <label>Kategori</label>
-                <input type="text" name="kategori" class="form-control">
+                <select class="form-control" name="kategori">
+                  <option>Kue Tart</option>
+                  <option>Kue Kering</option>
+                </select>
 
             </div>
             <div class="form=group">
