@@ -12,7 +12,8 @@
     </tr>
     <?php 
     $total = 0;
-    foreach ($pesanan as $psn): $subtotal = $psn->jumlah * $spn->harga;
+    foreach ($pesanan as $psn): 
+    $subtotal = $psn->jumlah * $psn->harga;
     $total += $subtotal;
     ?>
 
@@ -28,11 +29,11 @@
     <?php endforeach; ?>
 
     <tr>
-        <td colspan="4" align="right">$Grand Total</td>
+        <td colspan="4" align="right">Grand Total</td>
         <td align="right">Rp. <?php echo number_format($total,0,',','.') ?></td>
     </tr>
 
-    <a href="<?php echo base_url('admin/invoice/index') ?>"><div class="btn btn-sm btn-primary">Kembali</div></a>
+    <a href="<?php echo base_url('admin/invoice/index') ?>"><div class="btn btn-sm btn-primary mb-3">Kembali</div></a>
 
     </table>
 </div>
