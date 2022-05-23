@@ -71,7 +71,7 @@ class dashboard extends CI_Controller{
         $data['barang']=$this->model_barang->detail_brg($id_brg);
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-        $this->load->view('detail_barang');
+        $this->load->view('detail_barang',$data);
         $this->load->view('templates/footer');
     }
 }
