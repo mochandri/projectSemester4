@@ -20,7 +20,7 @@
 
     <h3>Input Alamat Pengiriman dan Pembayaran</h3>
     
-    <form method="post" action="<?php echo base_url() ?> dashboard/proses_pesanan">
+    <form method="post" action="<?php echo base_url() ?>dashboard/proses_pesanan">
 
     <div class="form-group">
         <label>Nama Lengkap</label>
