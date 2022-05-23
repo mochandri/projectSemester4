@@ -31,9 +31,11 @@
 
            
 
-            <a href="#" class="btn btn-sm btn-success">Detail</a>
+<?php echo anchor('dashboard/detail/'.$brg
+            ->id_brg,'<div class="btn btn-sm btn-success">Detail</div>')?> 
         </div>
         </div>
-    <?php endforeach; ?>
+
+      <?php endforeach; ?>
     </div>
 </div>
