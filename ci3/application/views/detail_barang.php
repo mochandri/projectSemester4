@@ -1,15 +1,15 @@
 <div class="container-fluid">
 
-<div class="card">
-  <h5 class="card-header">Detail_Produk</h5>
-  <div class="card-body">
+  <div class="card">
+      <h5 class="card_header">Detail Kue</h5>
+      <div class="card-body">
 
-  <?php  foreach($barang as $brg):  ?>
-    <div class="row">
-        <div class="col-md-4"> 
-            <img src="php echo base_url(). '/iploads/'.$brg->gambar ?> "
-            class= "card-img-top > 
-        </div>
+      <?php foreach ($barang as $brg): ?>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="<?php echo base_url(). '/uploads/'.$brg->gambar ?>">
+            </div>
+       
         <div class="col-md-8">
             <table class="table">
                 <tr> 
@@ -39,8 +39,7 @@
             </tr>     
             </table>
 
-            <?php echo anchor('dashboard/tambah_ke_keranjang/'.$brg
-            ->id_brg,'<div class="btn btn-sm btn-primary">Tambah ke Keranjang</div>')?>
+            <?php echo anchor('dashboard/tambah_ke_keranjang/'.$brg->id_brg,'<div class="btn btn-sm btn-primary">Tambah ke Keranjang</div>')?>
 
             <?php echo anchor('dashboard/indexg/','<div class="btn btn-sm btn-danger">Kembali</div>')
             ?>
