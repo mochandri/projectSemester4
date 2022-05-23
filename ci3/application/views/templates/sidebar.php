@@ -161,12 +161,13 @@
                                     <?php } else { ?>
                                     <li><?php echo anchor ('auth/login', 'Login'); ?></li>
                                     <?php }?>
-                        </ul>
+                        
 
-
+                                    </ul>
+                            </div>
                         </div>
                       
-
+                        
                     
 
                         
