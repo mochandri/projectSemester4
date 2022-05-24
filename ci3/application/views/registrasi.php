@@ -17,25 +17,26 @@
 
                             <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Nama Anda" name="nama">
+                                        placeholder="Nama" name="nama">
 
                                         <?php echo form_error('nama', '<div class="text-danger small ml-2">', '</div>') ?>
                                 </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Username Anda" name="username">
+                                        placeholder="Username" name="username">
                                         <?php echo form_error('username', '<div class="text-danger small ml-2">', '</div>') ?>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password" name="password_1">
-                                            <?php echo form_error('password_1', '<div class="text-danger small ml-2">', '</div>') ?>
+                                            id="exampleInputPassword" placeholder="Password" name="password">
+                                            <?php echo form_error('password', '<div class="text-danger small ml-2">', '</div>') ?>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Ulangi Password" name="password_2">
+                                            id="exampleRepeatPassword" placeholder="Confirm Password" name="password2">
+                                            <?php echo form_error('password', '<div class="text-danger small ml-2">', '</div>') ?>
                                     </div>
                                 </div>
 
