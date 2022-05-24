@@ -15,11 +15,11 @@ class Registrasi extends CI_Controller{
             $this->load->view('templates/footer');  
         } else {
             $data = array(
-                'id'        => '',
-                'nama'      => $this->input->post('nama'),
-                'nama'      => $this->input->post('username'),
-                'nama'      => $this->input->post('password_1'),
-                'nama'      => 2,
+                'id'            => '',
+                'nama'          => $this->input->post('nama'),
+                'username'      => $this->input->post('username'),
+                'password'      => $this->input->post('password_1'),
+                'role_id'       => 2,
             );
 
             $this->db->insert('tb_user',$data);
