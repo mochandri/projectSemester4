@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Ulangi Password" name="Password_2">
+                                            id="exampleRepeatPassword" placeholder="Ulangi Password" name="password_2">
                                     </div>
                                 </div>
 
