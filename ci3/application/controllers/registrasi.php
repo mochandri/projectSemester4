@@ -1,9 +1,7 @@
 <?php
 
 class Registrasi extends CI_Controller{
-    public function __construct(){
-        parent::__construct();
-    }
+
     public function index()
     {
         $this->form_validation->set_rules('nama',' Nama','required', [
@@ -12,11 +10,12 @@ class Registrasi extends CI_Controller{
         $this->form_validation->set_rules('username',' Username','required', [
             'required' => 'Username wajib diisi!'
         ]);
-        $this->form_validation->set_rules('password',' Password','required', [
-            'required' => 'Password wajib diisi!'
-        ]);
-        $this->form_validation->set_rules('password2',' Confirm Password','matches[password]',[
+        $this->form_validation->set_rules('password_1',' Password','required|matches[password_2]', [
+            'required' => 'Password wajib diisi!',
             'matches'  => 'Password tidak cocok'
+        ]);
+        $this->form_validation->set_rules('password_2',' Confirm Password','required|matches[password_1]',[
+            
         ]);
         
         if($this->form_validation->run() == FALSE){
@@ -28,7 +27,7 @@ class Registrasi extends CI_Controller{
                 'id'            => '',
                 'nama'          => $this->input->post('nama'),
                 'username'      => $this->input->post('username'),
-                'password'      => $this->input->post('password'),
+                'password'      => $this->input->post('password_1s'),
                 'role_id'       => 2
             );
 
