@@ -14,9 +14,7 @@ class Registrasi extends CI_Controller{
             'required' => 'Password wajib diisi!',
             'matches'  => 'Password tidak cocok'
         ]);
-        $this->form_validation->set_rules('password_2',' Confirm Password','required|matches[password_1]',[
-            
-        ]);
+        $this->form_validation->set_rules('password_2',' Confirm Password','required|matches[password_1]');
         
         if($this->form_validation->run() == FALSE){
             $this->load->view('templates/header');
@@ -27,7 +25,7 @@ class Registrasi extends CI_Controller{
                 'id'            => '',
                 'nama'          => $this->input->post('nama'),
                 'username'      => $this->input->post('username'),
-                'password'      => $this->input->post('password_1s'),
+                'password'      => $this->input->post('password_1'),
                 'role_id'       => 2
             );
 
