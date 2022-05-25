@@ -131,7 +131,7 @@
                             </div>
                         </li>
 
-                        
+                        <div class="navbar">
                         
                             
 
@@ -146,7 +146,7 @@
 
                                     </ul>
                             
-                        
+                        </div>
                     </ul>
 
                 </nav>
