@@ -34,7 +34,11 @@ class model_barang extends CI_Model{
 
     public function detail_brg($id_brg)
     {
+ Updated upstream
         $result = $this->db->where('id_brg',$id_brg)->get('tb_barang');
+
+        $result = $this->db->where('id_brg,$id_brg') ->get('tb-barang');
+ Stashed changes
         if ($result->num_rows() > 0){
             return $result->result();
         }else {

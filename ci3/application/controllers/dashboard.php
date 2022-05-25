@@ -77,7 +77,11 @@ class dashboard extends CI_Controller{
 
     public function detail($id_brg)
     {
+ Updated upstream
         $data['barang']=$this->model_barang->detail_brg($id_brg);
+
+        $data['barang'] = $this->model_barang->detail_brg($id_brg);
+ Stashed changes
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('detail_barang',$data);
