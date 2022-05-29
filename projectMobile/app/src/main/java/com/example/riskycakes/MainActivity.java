@@ -2,7 +2,6 @@ package com.example.riskycakes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -15,9 +14,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.jar.JarException;
+
 
 public class MainActivity extends AppCompatActivity {
     TextView tv_nama_brg, tv_kategori, tv_keterangan, tv_harga, tv_stok, tv_gambar;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private  void  tampilData(){
         loading = ProgressDialog.show(MainActivity.this,"Memuat Data","Harap Tunggu");
         RequestQueue queue= Volley.newRequestQueue(this);
-        String url ="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=toko_online";
+        String url ="http://localhost/projectSemester4/ci3/api/barang";
         JSONObject jsonObject = new JSONObject();
         final String requestBody = jsonObject.toString();
 
@@ -52,10 +52,12 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jo = new JSONObject(response.toString());
                     String nama_brg = jo.getString("nama_brg");
                     String keterangan = jo.getString("keterangan");
-                    String kategori = jo.getString("harga");
-                    String stok = jo.getString("stok");
+                    String kategori = jo.getString("kategori");
                     String harga = jo.getString("harga");
+                    String stok = jo.getString("stok");
                     String gambar = jo.getString("gambar");
+
+
 
 
                     tv_nama_brg.setText(nama_brg);
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     tv_gambar.setText(gambar);
                     loading.cancel();
                     Toast.makeText(MainActivity.this, "Berhasil Memuat", Toast.LENGTH_SHORT).show();
-                } catch (JarException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }

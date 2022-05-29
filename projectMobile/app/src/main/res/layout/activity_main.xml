@@ -235,11 +235,12 @@
                     android:id="@+id/txtgambar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="gambar"
                     android:textColor="#fff"
                     android:textSize="24dp"
-                    android:textStyle="bold"
-                    android:gravity="center"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tv_gambar"
                     android:layout_width="match_parent"
