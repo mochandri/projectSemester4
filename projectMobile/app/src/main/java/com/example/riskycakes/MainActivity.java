@@ -1,9 +1,12 @@
 package com.example.riskycakes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,73 +17,71 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    TextView tv_nama_brg, tv_kategori, tv_keterangan, tv_harga, tv_stok, tv_gambar;
-    ProgressDialog loading;
+
+    private String url = "localhost/projectSemester4/ci3/api/barang";
+    RecyclerView recyclerView;
+    LinearLayoutManager linearLayoutManager;
+    AdapterData adapterData;
+    List<DataModel> listData;
+    DataModel dataModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv_nama_brg = findViewById(R.id.tv_nama_brg);
-        tv_kategori = findViewById(R.id.tv_kategori);
-        tv_keterangan = findViewById(R.id.tv_keterangan);
-        tv_harga = findViewById(R.id.tv_harga);
-        tv_stok = findViewById(R.id.tv_stok);
-        tv_gambar = findViewById(R.id.tv_gambar);
-
-        tampilData();
+        recyclerView =  findViewById(R.id.rvData);
+        getData();
 
     }
-    private  void  tampilData(){
-        loading = ProgressDialog.show(MainActivity.this,"Memuat Data","Harap Tunggu");
-        RequestQueue queue= Volley.newRequestQueue(this);
-        String url ="http://localhost/projectSemester4/ci3/api/barang";
-        JSONObject jsonObject = new JSONObject();
-        final String requestBody = jsonObject.toString();
 
-        StringRequest stringRequest = new StringRequest(
-                Request.Method.GET, url, new Response.Listener<String>() {
+    private void getData(){
+        RequestQueue requestQueue = Volley.newRequestQueue(this );
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+
+                listData = new ArrayList<>();
                 try {
-                    JSONObject jo = new JSONObject(response.toString());
-                    String nama_brg = jo.getString("nama_brg");
-                    String keterangan = jo.getString("keterangan");
-                    String kategori = jo.getString("kategori");
-                    String harga = jo.getString("harga");
-                    String stok = jo.getString("stok");
-                    String gambar = jo.getString("gambar");
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("result");
+                    for (int i=0; i<jsonArray.length(); i++){
+                        dataModel = new DataModel();
+                        JSONObject data = jsonArray.getJSONObject(i);
+                        dataModel.setJudul(data.getString("judul"));
+                        dataModel.setGambar(data.getString("img"));
+                        listData.add(dataModel);
+                    }
 
+                    linearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
+                    recyclerView.setLayoutManager(linearLayoutManager);
 
-
-
-                    tv_nama_brg.setText(nama_brg);
-                    tv_kategori.setText(kategori);
-                    tv_keterangan.setText(keterangan);
-                    tv_stok.setText(stok);
-                    tv_harga.setText(harga);
-                    tv_gambar.setText(gambar);
-                    loading.cancel();
-                    Toast.makeText(MainActivity.this, "Berhasil Memuat", Toast.LENGTH_SHORT).show();
+                    adapterData = new AdapterData(MainActivity.this, listData);
+                    recyclerView.setAdapter(adapterData);
+                    adapterData.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+
             }
         }, new Response.ErrorListener() {
             @Override
+
             public void onErrorResponse(VolleyError error) {
-                loading.cancel();
-                Toast.makeText(MainActivity.this, "Gagal Ambil Rest Api"+ error, Toast.LENGTH_SHORT).show();
+
             }
-        }
-        );
-        queue.add(stringRequest);
+        });
+        requestQueue.add(stringRequest);
 
     }
 }
