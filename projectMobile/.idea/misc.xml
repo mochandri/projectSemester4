@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/xampp/htdocs/projectSemester4/projectMobile/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/xampp/htdocs/projectSemester4/projectMobile/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/xampp/htdocs/projectSemester4/projectMobile/app/src/main/res/layout/activity_main2.xml" value="0.1716485507246377" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/projectMobile/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/xampp/htdocs/projectSemester4/projectMobile/app/src/main/res/layout/item_data.xml" value="0.1" />
       </map>
     </option>
