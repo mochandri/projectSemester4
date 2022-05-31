@@ -4,11 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,10 +20,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MainActivity extends AppCompatActivity {
-
-    private String url = "localhost/projectSemester4/ci3/api/barang";
+    private String url = "https://7cde-103-144-18-67.ap.ngrok.io/projectSemester4/ci3/api/barang";
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
     AdapterData adapterData;
@@ -39,25 +33,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView =  findViewById(R.id.rvData);
+        recyclerView = findViewById(R.id.rvData);
         getData();
 
-    }
 
+
+
+    }
     private void getData(){
         RequestQueue requestQueue = Volley.newRequestQueue(this );
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                dataModel = new DataModel();
 
                 listData = new ArrayList<>();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArray = jsonObject.getJSONArray("result");
+                    JSONArray jsonArray = jsonObject.getJSONArray("results");
                     for (int i=0; i<jsonArray.length(); i++){
                         dataModel = new DataModel();
                         JSONObject data = jsonArray.getJSONObject(i);
-                        dataModel.setJudul(data.getString("judul"));
+                        dataModel.setNama(data.getString("nama"));
                         dataModel.setGambar(data.getString("img"));
                         listData.add(dataModel);
                     }

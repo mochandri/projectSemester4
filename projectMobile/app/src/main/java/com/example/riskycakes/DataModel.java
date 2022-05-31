@@ -1,14 +1,14 @@
 package com.example.riskycakes;
 
 public class DataModel {
-    private String judul, gambar;
+    private String nama, gambar;
 
-    public String getJudul() {
-        return judul;
+    public String getNama() {
+        return nama;
     }
 
-    public void setJudul(String judul) {
-        this.judul = judul;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getGambar() {
