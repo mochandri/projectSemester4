@@ -69,8 +69,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lv_login"
         android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rectangel"
         android:text="Register"
         android:textAllCaps="false" />
