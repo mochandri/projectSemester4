@@ -59,11 +59,12 @@
         android:layout_centerVertical="true"/>
 
     <TextView
+        android:id="@+id/tv_login"
         android:textStyle="bold"
         android:text="LOGIN"
         android:textSize="24dp"
         android:layout_marginBottom="40dp"
-        android:layout_above="@id/lv_login"
+        android:layout_above="@+id/lv_login"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
