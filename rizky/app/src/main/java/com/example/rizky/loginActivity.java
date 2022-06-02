@@ -4,10 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class loginActivity extends AppCompatActivity {
+
+    private EditText et_user, et_pass;
+    private Button btn_login;
+    private TextView tv_regis;
+
     @Override
     protected void onCreate(Bundle savedIntanceState){
         super.onCreate(savedIntanceState);

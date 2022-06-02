@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class registerActivity extends AppCompatActivity {
@@ -50,10 +49,8 @@ public class registerActivity extends AppCompatActivity {
             }
         });
     }
-
     private void Register() {
         loading.setVisibilty(View.VISIBLE);
         Register.setVisibility(View.GONE);
-
     }
 }
