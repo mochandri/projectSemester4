@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     super.run();
                     while (wait < welcomeScreenDisplay){
-                        sleep(100);
-                        wait += 100;
+                        sleep(500);
+                        wait += 500;
                     }
                 }catch (Exception e){
                     System.out.println("EXc="+e);
