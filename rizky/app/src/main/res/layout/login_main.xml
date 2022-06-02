@@ -2,7 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAE1E1">
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/otpvefiy" />
 
 
     <RelativeLayout
@@ -18,10 +23,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFF"
-            android:paddingLeft="30dp"
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="20dp"
-            android:hint="Username" />
+            android:hint="Username"
+            android:paddingLeft="30dp" />
         <View
             android:id="@+id/v_saparator"
             android:layout_below="@+id/et_username"

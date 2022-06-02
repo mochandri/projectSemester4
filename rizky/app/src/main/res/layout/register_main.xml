@@ -4,64 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8E9E8">
+    android:background="#FAF4F4">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/verifity" />
 
     <RelativeLayout
         android:id="@+id/rl_input"
-        android:layout_marginRight="70dp"
         android:background="@drawable/sp_rectangle_root"
+        android:layout_marginRight="40dp"
         android:layout_centerVertical="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:paddingLeft="20dp"
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFF"
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="20dp"
-            android:id="@+id/et_username"
             android:hint="Username"
-            android:backgroundTint="#FFF"
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
-
+            android:paddingLeft="30dp" />
         <View
             android:id="@+id/v_saparator"
-            android:background="#E8E9E8"
-            android:layout_below="@id/et_username"
+            android:layout_below="@+id/et_username"
+            android:background="#FAE1E1"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"/>
 
         <EditText
-            android:id="@+id/et_password"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@id/v_saparator"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v_saparator"
             android:backgroundTint="#FFF"
             android:drawableLeft="@drawable/key"
             android:drawablePadding="20dp"
             android:hint="Password"
-            android:paddingLeft="20dp" />
+            android:paddingLeft="30dp" />
+
+
+
+
     </RelativeLayout>
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_register"
-        android:layout_marginRight="40dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/masuk"
+        android:layout_marginRight="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:src="@drawable/masuk"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/rl_input"
-        android:layout_marginBottom="40dp"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:text="Register"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="Register"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -70,7 +78,7 @@
         android:layout_above="@id/tv_title"
         android:layout_alignParentRight="true"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rectangel"
         android:text="Login"
         android:textAllCaps="false" />
