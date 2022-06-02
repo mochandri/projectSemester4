@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar" >
         <activity
-            android:name=".DashboardActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
@@ -24,6 +21,7 @@
         </activity>
         <activity android:name=".loginActivity" />
         <activity android:name=".registerActivity" />
+        <activity android:name=".DashboardActivity"/>
     </application>
 
 </manifest>
