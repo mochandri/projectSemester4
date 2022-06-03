@@ -29,6 +29,7 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
         private EditText user, pass;
         private FloatingActionButton btnRegis;
         private Button btnLogin;
+        private static String URL_REGIST = "http://192.168.0.148/projectSemester4/ci3/api/user ";
 
         @Override
         protected void onCreate(Bundle savedIntanceState) {
