@@ -3,20 +3,20 @@
 class M_api extends CI_Model{
     public function proses_login($user, $pass)
     {
-        return $this->db->query("SELECT username FROM user WHERE username = '$user' AND password = MD5('$pass')");
+        return $this->db->query("SELECT username FROM tb_user WHERE username = '$user' AND password = MD5('$pass')");
     }
 
     public function cek_username_register($username)
     {
-        return $this->db->query("SELECT username FROM user WHERE username = '$username'");
+        return $this->db->query("SELECT username FROM tb_user WHERE username = '$username'");
     }
     public function cek_if_register($username)
     {
-        return $this->db->query("SELECT = FROM user WHERE username = '$username' AND username IS NOT NULL");
+        return $this->db->query("SELECT = FROM tb_user WHERE username = '$username' AND username IS NOT NULL");
     }
     public function cek_user_exist_register($user)
     {
-        return $this->db->query("SELECT username FROM user WHERE username = '$user'");
+        return $this->db->query("SELECT username FROM tb_user WHERE username = '$user'");
     }
     public function proses_register()
     {
