@@ -38,7 +38,7 @@ class Api extends CI_Controller{
     public function register()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (isset($_POST['username']) && isset($_POST['pass']) && isset($_POST['pass'])) {
+            if (isset($_POST['username']) && isset($_POST['pass']) && isset($_POST['pass']) && isset($_POST['cpass'])) {
                 if ($this->M-api->cek_username_register($_POST['username'])->num_rows() == 0) {
                     $result['value'] = "0";
                     $result['pesan']   = "username tidak terdaftar!";
