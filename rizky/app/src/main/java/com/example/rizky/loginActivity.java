@@ -39,7 +39,7 @@ public class loginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedIntanceState) {
         super.onCreate(savedIntanceState);
-        setContentView(R.layout.register_main);
+        setContentView(R.layout.login_main);
 
         user = (EditText) findViewById(R.id.et_username);
         pass = (EditText) findViewById(R.id.et_password);
@@ -53,6 +53,10 @@ public class loginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+        Intent goRegister = new Intent(loginActivity.this, registerActivity.class);
+        startActivity(goRegister);
+        finish();
+
         if(v == floatingActionButtonLogin){
             String username = user.getText().toString().trim();
             String password = pass.getText().toString().trim();

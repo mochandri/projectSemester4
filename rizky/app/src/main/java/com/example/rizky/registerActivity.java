@@ -26,7 +26,7 @@ import java.util.Map;
 
 
 public class registerActivity extends AppCompatActivity implements View.OnClickListener {
-        private EditText user, pass;
+        private EditText nama, user, pass;
         private FloatingActionButton btnRegis;
         private Button btnLogin;
         private static String URL_REGIST = "http://192.168.0.148/projectSemester4/ci3/api/user ";
@@ -36,9 +36,10 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
             super.onCreate(savedIntanceState);
             setContentView(R.layout.register_main);
 
+            nama =(EditText) findViewById(R.id.et_nama);
             user = (EditText) findViewById(R.id.et_username);
             pass = (EditText) findViewById(R.id.et_password);
-            btnRegis = (FloatingActionButton) findViewById(R.id.floatregis);
+            btnRegis = (FloatingActionButton) findViewById(R.id.floatRegis);
             btnLogin = (Button) findViewById(R.id.btnLogin);
 
             btnLogin.setOnClickListener(this);
@@ -47,17 +48,24 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
+        Intent goRegister = new Intent(registerActivity.this, loginActivity.class);
+        startActivity(goRegister);
+        finish();
+
+
         if(v == btnLogin){
             Intent intent = new Intent(registerActivity. this, loginActivity.class);
             startActivity(intent);
         }else if(v == btnRegis){
+            String Nama = nama.getText().toString().trim();
             String username = user.getText().toString().trim();
             String password = pass.getText().toString().trim();
 
-            if(!username.isEmpty() && !password.isEmpty()){
+            if(!Nama.isEmpty() &&!username.isEmpty() && !password.isEmpty()){
                 if(password.equals(password))Register();
                 else pass.setError("Masukkan Password");
             }else{
+                nama.setError("Masukkan Nama");
                 user.setError("Masukkan Username");
                 pass.setError("Masukkan Password");
             }
