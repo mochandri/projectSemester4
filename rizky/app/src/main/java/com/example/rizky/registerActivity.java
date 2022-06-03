@@ -98,7 +98,7 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(registerActivity.this, "Registrasi Erorr!"+e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(registerActivity.this, "Registrasi Gagal!"+e.toString(), Toast.LENGTH_SHORT).show();
                             btnRegis.setVisibility(View.VISIBLE);
                         }
                     }
