@@ -29,6 +29,7 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
         private EditText nama, user, pass;
         private FloatingActionButton btnRegis;
         private Button btnLogin;
+        private String roleid;
         private static String URL_REGIST = "http://192.168.0.148/projectSemester4/ci3/api/user ";
 
         @Override
@@ -62,8 +63,6 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
             String password = pass.getText().toString().trim();
 
             if(!Nama.isEmpty() &&!username.isEmpty() && !password.isEmpty()){
-                if(password.equals(password))Register();
-                else pass.setError("Masukkan Password");
             }else{
                 nama.setError("Masukkan Nama");
                 user.setError("Masukkan Username");
@@ -76,8 +75,11 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
     private void Register() {
             btnRegis.setVisibility(View.GONE);
 
+            final String role_id = this.roleid.getBytes().toString().trim();
+            final String Nama = this.nama.getText().toString().trim();
             final String username = this.user.getText().toString().trim();
             final String password = this.pass.getText().toString().trim();
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
                 new Response.Listener<String>() {
@@ -108,13 +110,18 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(registerActivity.this, "Registrasi Erorr!" +error.toString(), Toast.LENGTH_SHORT).show();
                         btnRegis.setVisibility(View.VISIBLE);
+                        error.printStackTrace();
                     }
                 }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError{
                 Map<String, String> params = new HashMap<>();
+//                return (params != null || params.isEmpty())? params : super.getParams();
+
+                params.put("nama",Nama);
                 params.put("user",username);
                 params.put("pass",password);
+                params.put("roleid",role_id);
                 return params;
             }
         };

@@ -53,7 +53,7 @@ public class loginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        Intent goRegister = new Intent(loginActivity.this, registerActivity.class);
+        Intent goRegister = new Intent(loginActivity.this, DashboardActivity.class);
         startActivity(goRegister);
         finish();
 
