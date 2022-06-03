@@ -27,12 +27,13 @@
             android:drawablePadding="20dp"
             android:hint="Username"
             android:paddingLeft="30dp" />
+
         <View
             android:id="@+id/v_saparator"
-            android:layout_below="@+id/et_username"
-            android:background="#FAE1E1"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"/>
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/et_username"
+            android:background="#FAE1E1" />
 
         <EditText
             android:layout_width="match_parent"
@@ -51,6 +52,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatLogin"
         android:layout_marginRight="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
