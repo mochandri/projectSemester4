@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Api extends CI_Controller{
@@ -70,4 +68,3 @@ class Api extends CI_Controller{
 
 
 }
->>>>>>> cfb0bf02f8c4d6916117c20114a42b7decc35da5
