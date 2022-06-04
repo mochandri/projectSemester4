@@ -128,7 +128,7 @@ class user extends REST_Controller {
         $row = $this->db->get_where('tb_user', $data)->row();
 
         if($cek->num_rows() >= 1){
-            if(count($row)  >= 1){
+            if($row){
                 $result = [
                     'logged_in' => true,
                     'nama'      => $row->nama,
