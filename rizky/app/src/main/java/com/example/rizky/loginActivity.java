@@ -60,17 +60,17 @@ public class loginActivity extends AppCompatActivity {
                     startActivity(goRegister);
                     finish();
 
-<<<<<<< HEAD
+
                 } else if (v == btnRegis) {
                     String username = Username.getText().toString().trim();
                     String password = Password.getText().toString().trim();
-=======
+
     @Override
     public void onClick(View v) {
         Intent goRegister = new Intent(loginActivity.this, DashboardActivity.class);
         startActivity(goRegister);
         finish();
->>>>>>> 0adb0e4da22d8226e407822e0890a6f4ba93ac3b
+
 
                 }
                 Username.setError("Masukkan Username");
