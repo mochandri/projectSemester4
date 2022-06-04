@@ -56,7 +56,7 @@ public class loginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(goRegister);
                 finish();
 
-<<<<<<< HEAD
+
 
                 } else if (v == btnRegis) {
                     String username = Username.getText().toString().trim();
@@ -68,7 +68,7 @@ public class loginActivity extends AppCompatActivity implements View.OnClickList
         startActivity(goRegister);
         finish();
 
-=======
+
                 if(v == floatingActionButtonLogin){
                     String username = user.getText().toString().trim();
                     String password = pass.getText().toString().trim();
@@ -79,7 +79,6 @@ public class loginActivity extends AppCompatActivity implements View.OnClickList
                         user.setError("Masukkan Username");
                         pass.setError("Masukkan Password");
                     }
->>>>>>> a556adc838ce2f50970bf19f8616b2db708e7d91
 
                 }
 

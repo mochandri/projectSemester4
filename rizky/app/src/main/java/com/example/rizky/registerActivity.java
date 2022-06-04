@@ -29,16 +29,14 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
         private EditText nama, user, pass;
         private FloatingActionButton btnRegis;
         private Button btnLogin;
-<<<<<<< HEAD
+
 
 
 
         private String roleid;
         private static String URL_REGIST = "http://192.168.0.148/projectSemester4/ci3/api/user ";
-=======
-        private String roleid;
-        private static String URL_REGIST = "http://192.168.0.148/projectSemester4/ci3/api/user/register ";
->>>>>>> a556adc838ce2f50970bf19f8616b2db708e7d91
+
+
 
 
         @Override
@@ -71,18 +69,8 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
             String username = user.getText().toString().trim();
             String password = pass.getText().toString().trim();
 
-<<<<<<< HEAD
 
-            if(!username.isEmpty() && !password.isEmpty()){
-                if(password.equals(password))Register();
-                else pass.setError("Masukkan Password");
 
-            if(!Nama.isEmpty() &&!username.isEmpty() && !password.isEmpty()){
-
-            }else{
-                user.setError("Masukkan Username");
-                pass.setError("Masukkan Password");
-=======
                 if(!Nama.isEmpty() &&!username.isEmpty() && !password.isEmpty()){
                     if(password.equals(password))Register();
                     else pass.setError("Masukkan Password");
@@ -92,7 +80,6 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
                     pass.setError("Masukkan Password");
                 }
 
->>>>>>> a556adc838ce2f50970bf19f8616b2db708e7d91
             }
         }
 
