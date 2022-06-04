@@ -121,8 +121,8 @@ class user extends REST_Controller {
     }
     public function login_post(){
         $data =[
-            'username' => trim($this->input->post('username'),TRUE),
-            'password' => trim($this->input->post('password'),TRUE)
+            'username' => trim($this->input->post('username',TRUE)),
+            'password' => trim($this->input->post('password',TRUE))
         ];
         $cek = $this->db->get_where('tb_user', array('username'=> $this->input->post('username',TRUE)));
         $row = $this->db->get_where('tb_user', $data)->row();
@@ -131,14 +131,16 @@ class user extends REST_Controller {
             if(count($row)  >= 1){
                 $result = [
                     'logged_in' => true,
-                    'nama'      =>$row->nama,
-                    'username' =>row->username,
-                    'password' =>row->password
+                    'nama'      => $row->nama,
+                    'username'  => $row->username,
+                    'password'  => $row->password,
                 ];
-                $this->response(['error'=>false, 'message'=>'Login Berhasil','Result'=>$result], 401);
+
+                $this->response(['error'=>false, 'message'=>'Login Berhasil','Result' => $result], 401);
             }else{
                 $this->response(['error'=>true,'message'=>'Login Gagal'],401);
             } 
+            
         }else{
             $this->response(['error'=>true,'message'=>'akun anda tidak terdaftar'],401);
         }
