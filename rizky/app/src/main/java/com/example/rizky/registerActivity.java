@@ -26,14 +26,19 @@ import java.util.Map;
 
 
 public class registerActivity extends AppCompatActivity implements View.OnClickListener {
-        private EditText user, pass;
+        private EditText nama, user, pass;
         private FloatingActionButton btnRegis;
         private Button btnLogin;
+<<<<<<< HEAD
 
 
 
         private String roleid;
         private static String URL_REGIST = "http://192.168.0.148/projectSemester4/ci3/api/user ";
+=======
+        private String roleid;
+        private static String URL_REGIST = "http://192.168.0.148/projectSemester4/ci3/api/user/register ";
+>>>>>>> a556adc838ce2f50970bf19f8616b2db708e7d91
 
 
         @Override
@@ -41,9 +46,10 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
             super.onCreate(savedIntanceState);
             setContentView(R.layout.register_main);
 
+            nama =(EditText) findViewById(R.id.et_nama);
             user = (EditText) findViewById(R.id.et_username);
             pass = (EditText) findViewById(R.id.et_password);
-            btnRegis = (FloatingActionButton) findViewById(R.id.floatregis);
+            btnRegis = (FloatingActionButton) findViewById(R.id.floatRegis);
             btnLogin = (Button) findViewById(R.id.btnLogin);
 
             btnLogin.setOnClickListener(this);
@@ -52,13 +58,20 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
+        Intent goRegister = new Intent(registerActivity.this, loginActivity.class);
+        startActivity(goRegister);
+        finish();
+
+
         if(v == btnLogin){
             Intent intent = new Intent(registerActivity. this, loginActivity.class);
             startActivity(intent);
         }else if(v == btnRegis){
+            String Nama = nama.getText().toString().trim();
             String username = user.getText().toString().trim();
             String password = pass.getText().toString().trim();
 
+<<<<<<< HEAD
 
             if(!username.isEmpty() && !password.isEmpty()){
                 if(password.equals(password))Register();
@@ -69,12 +82,21 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
             }else{
                 user.setError("Masukkan Username");
                 pass.setError("Masukkan Password");
+=======
+                if(!Nama.isEmpty() &&!username.isEmpty() && !password.isEmpty()){
+                    if(password.equals(password))Register();
+                    else pass.setError("Masukkan Password");
+                }else{
+                    nama.setError("Masukkan Nama");
+                    user.setError("Masukkan Username");
+                    pass.setError("Masukkan Password");
+                }
+
+>>>>>>> a556adc838ce2f50970bf19f8616b2db708e7d91
             }
-
         }
-    }
 
-    private void Register() {
+        private void Register() {
             btnRegis.setVisibility(View.GONE);
 
             final String role_id = this.roleid.getBytes().toString().trim();
@@ -82,51 +104,47 @@ public class registerActivity extends AppCompatActivity implements View.OnClickL
             final String username = this.user.getText().toString().trim();
             final String password = this.pass.getText().toString().trim();
 
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            String value = jsonObject.getString("value");
-                            String pesan = jsonObject.getString("pesan");
-                            if (value.equals("1")) {
-                                Toast.makeText(registerActivity.this, pesan, Toast.LENGTH_SHORT).show();
-                                Intent berhasil = new Intent(registerActivity.this, loginActivity.class);
-                                startActivity(berhasil);
-                                btnRegis.setVisibility(View.VISIBLE);
-                            } else {
-                                Toast.makeText(registerActivity.this, "", Toast.LENGTH_SHORT).show();
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+                                String value = jsonObject.getString("value");
+                                String pesan = jsonObject.getString("pesan");
+                                if (value.equals("1")) {
+                                    Toast.makeText(registerActivity.this, pesan, Toast.LENGTH_SHORT).show();
+                                    Intent berhasil = new Intent(registerActivity.this, loginActivity.class);
+                                    startActivity(berhasil);
+                                    btnRegis.setVisibility(View.VISIBLE);
+                                } else {
+                                    Toast.makeText(registerActivity.this, "", Toast.LENGTH_SHORT).show();
+                                    btnRegis.setVisibility(View.VISIBLE);
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Toast.makeText(registerActivity.this, "Registrasi Erorr!"+e.toString(), Toast.LENGTH_SHORT).show();
                                 btnRegis.setVisibility(View.VISIBLE);
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(registerActivity.this, "Registrasi Erorr!"+e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(registerActivity.this, "Registrasi Erorr!" +error.toString(), Toast.LENGTH_SHORT).show();
                             btnRegis.setVisibility(View.VISIBLE);
                         }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(registerActivity.this, "Registrasi Erorr!" +error.toString(), Toast.LENGTH_SHORT).show();
-                        btnRegis.setVisibility(View.VISIBLE);
-                        error.printStackTrace();
-                    }
-                }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError{
-                Map<String, String> params = new HashMap<>();
-//                return (params != null || params.isEmpty())? params : super.getParams();
-
-                params.put("nama",Nama);
-                params.put("user",username);
-                params.put("pass",password);
-                params.put("roleid",role_id);
-                return params;
-            }
-        };
+                    }){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError{
+                    Map<String, String> params = new HashMap<>();
+                    params.put("nama",Nama);
+                    params.put("user",username);
+                    params.put("pass",password);
+                    params.put("roleid",role_id);
+                    return params;
+                }
+            };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
