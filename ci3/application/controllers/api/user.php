@@ -9,17 +9,6 @@ require APPPATH . '/libraries/REST_Controller.php';
 // use namespace
 use Restserver\Libraries\REST_Controller;
 
-/**
- * This is an example of a few basic user interaction methods you could use
- * all done with a hardcoded array
- *
- * @package         CodeIgniter
- * @subpackage      Rest Server
- * @category        Controller
- * @author          Phil Sturgeon, Chris Kacerguis
- * @license         MIT
- * @link            https://github.com/chriskacerguis/codeigniter-restserver
- */
 class user extends REST_Controller {
 
     function __construct()
@@ -81,14 +70,14 @@ class user extends REST_Controller {
         }
     }
 
-    public function index_post()
+    public function register_post()
     {
         // $this->some_model->update_user( ... );
         $data= [
             'nama' => $this->post('nama'),
             'username' => $this->post('username'),
             'password' => $this->post('password'),
-            'role' => $this->post('role')
+            'role_id' => '2'
         
         ];
         $this->db->insert("tb_user",$data);
@@ -129,6 +118,30 @@ class user extends REST_Controller {
         $this->db->update("tb_user",$data,$where);
         $this->set_response($data,REST_Controller::HTTP_CREATED);
 
+    }
+    public function login_post(){
+        $data =[
+            'username' => trim($this->input->post('username'),TRUE),
+            'password' => trim($this->input->post('password'),TRUE)
+        ];
+        $cek = $this->db->get_where('tb_user', array('username'=> $this->input->post('username',TRUE)));
+        $row = $this->db->get_where('tb_user', $data)->row();
+
+        if($cek->num_rows()>=1){
+            if(count($row)>=1){
+                $result = [
+                    'logged_in' => true,
+                    'nama'=>$row->nama,
+                    'username' =>row->username,
+                    'password' =>row->password
+                ];
+                $this->response(['error'=>false, 'message'=>'Login Berhasil','Result'=>$result], 401);
+            }else{
+                $this->response(['error'=>true,'message'=>'Login Gagal'],401);
+            }
+        }else{
+            $this->response(['error'=>true,'message'=>'akun anda tidak terdaftar'],401);
+        }
     }
 
 }

@@ -17,7 +17,12 @@
         <entry key="..\:/xampp/htdocs/projectSemester4/rizky/app/src/main/res/layout/activity_main.xml" value="0.3578125" />
         <entry key="..\:/xampp/htdocs/projectSemester4/rizky/app/src/main/res/layout/activity_register_succes.xml" value="0.1" />
         <entry key="..\:/xampp/htdocs/projectSemester4/rizky/app/src/main/res/layout/login_main.xml" value="0.1346704871060172" />
+<<<<<<< HEAD
         <entry key="..\:/xampp/htdocs/projectSemester4/rizky/app/src/main/res/layout/register_main.xml" value="0.1" />
+=======
+        <entry key="..\:/xampp/htdocs/projectSemester4/rizky/app/src/main/res/layout/network_security_config.xml" value="0.21105072463768115" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/rizky/app/src/main/res/layout/register_main.xml" value="0.22" />
+>>>>>>> 0adb0e4da22d8226e407822e0890a6f4ba93ac3b
       </map>
     </option>
   </component>
