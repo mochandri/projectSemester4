@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard">
 
-<<<<<<< HEAD
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +16,7 @@
         ini dashboard  "
         android:textAlignment="center"
         android:textSize="50dp" />
-=======
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
