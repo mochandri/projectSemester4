@@ -44,12 +44,6 @@ public class Dashboard extends AppCompatActivity {
         mainAdapter = new MainAdapter(results, new MainAdapter.OnAdapterListener() {
             @Override
             public void onClick(MainModel.Result result) {
-//                Toast.makeText(Dashboard.this,
-//                        result.getnama_brg,
-//                        result.getketerangan,
-//                        result.getkategori,
-//                        result.getharga,
-//                        result.getstok,Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Dashboard.this,DetailActivity.class);
             intent.putExtra("intent_nama_brg",result.getnama_brg);
