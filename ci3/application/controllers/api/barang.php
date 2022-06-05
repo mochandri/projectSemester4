@@ -50,7 +50,8 @@ class barang extends REST_Controller {
             {
                 // Set the response and exit
                 $this->response([
-                    'Result'=> $users], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+                    'Result'=>$users
+                    ], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
             }
             else
             {

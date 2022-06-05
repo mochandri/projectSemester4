@@ -6,32 +6,41 @@ import javax.xml.transform.Result;
 
 public class MainModel {
 
-        private List<Result> result;
+        private List<Result> Result;
 
         public List<Result> getResult() {
-            return result;
+            return Result;
         }
 
-        public void setResult(List<Result> result) {
+        public void setResult(List<Result> Result) {
 
-            this.result = result;
+            this.Result = Result;
         }
     public class  Result{
 
-        private int id;
+        private int id_brg;
         private  String nama_brg;
         private  String keterangan;
         private  String kategori;
         private  int harga;
         private  int  Stok;
         private String gambar;
+        private String gambar_url;
 
-        public int getId() {
-            return id;
+        public String getGambar_url() {
+            return gambar_url;
         }
 
-        public void setId(int id) {
-            this.id = id;
+        public void setGambar_url(String gambar_url) {
+            this.gambar_url = gambar_url;
+        }
+
+        public int getId_brg() {
+            return id_brg;
+        }
+
+        public void setId_brg(int id_brg) {
+            this.id_brg = id_brg;
         }
 
         public String getNama_brg() {
@@ -85,13 +94,14 @@ public class MainModel {
         @Override
         public String toString() {
             return "Result{" +
-                    "id=" + id +
+                    "id_brg=" + id_brg +
                     ", nama_brg='" + nama_brg + '\'' +
                     ", keterangan='" + keterangan + '\'' +
                     ", kategori='" + kategori + '\'' +
                     ", harga=" + harga +
                     ", Stok=" + Stok +
                     ", gambar='" + gambar + '\'' +
+                    ", gambar_url='" + gambar_url + '\'' +
                     '}';
         }
     }

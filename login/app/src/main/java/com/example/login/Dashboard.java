@@ -49,10 +49,10 @@ public class Dashboard extends AppCompatActivity {
                 Intent intent = new Intent(Dashboard.this,DetailActivity.class);
             intent.putExtra("intent_nama_brg",result.getNama_brg());
             intent.putExtra("intent_keterangan", result.getKeterangan());
-            intent.putExtra("intent_kategori", result.getKategori());
-            intent.putExtra("intent_harga", result.getHarga());
-            intent.putExtra("intent_stok", result.getStok());
-            intent.putExtra("intent_image",result.getGambar());
+//            intent.putExtra("intent_kategori", result.getKategori());
+//            intent.putExtra("intent_harga", result.getHarga());
+//            intent.putExtra("intent_stok", result.getStok());
+            intent.putExtra("intent_image",result.getGambar_url());
 
 
 
@@ -64,27 +64,34 @@ public class Dashboard extends AppCompatActivity {
         recyclerView.setAdapter(mainAdapter);
     }
 
-    private  void getDataFromApi(){
-        progressBar.setVisibility(View.VISIBLE);
+    private void getDataFromApi() {
+        showLoading( true );
         ApiService.endpoint().getData()
                 .enqueue(new Callback<MainModel>() {
                     @Override
                     public void onResponse(Call<MainModel> call, Response<MainModel> response) {
-                        Log.d(TAG, response.toString());
-                        if(response.isSuccessful()){
+                        showLoading( false );
+                        Log.d( TAG, "onResponse: " + response.toString());
+                        if (response.isSuccessful()) {
                             List<MainModel.Result> results = response.body().getResult();
                             Log.d(TAG, results.toString());
                             mainAdapter.setData( results );
+
                         }
                     }
-
                     @Override
                     public void onFailure(Call<MainModel> call, Throwable t) {
-                        progressBar.setVisibility(View.GONE);
-                        Log.d(TAG, t.toString());
-
+                        showLoading( false );
+                        Log.d( TAG, t.toString());
                     }
                 });
+    }
+    private void showLoading(Boolean loading) {
+        if (loading) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
     }
 
 
