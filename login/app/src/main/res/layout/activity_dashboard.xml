@@ -10,12 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:text="halo
-
-
-        ini dashboard  "
+        android:text="halo ini dashboard  "
         android:textAlignment="center"
         android:textSize="50dp" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -36,6 +34,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
->>>>>>> 2347536bb06c58accb0a1fa1e619882a59ee16eb
 
 </RelativeLayout>

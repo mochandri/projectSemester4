@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +40,24 @@ public class Dashboard extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
     }
-
     private void setupRecyclerView(){
-        mainAdapter = new MainAdapter(results);
+        mainAdapter = new MainAdapter(results, new MainAdapter.OnAdapterListener() {
+            @Override
+            public void onClick(MainModel.Result result) {
+
+                Intent intent = new Intent(Dashboard.this,DetailActivity.class);
+            intent.putExtra("intent_nama_brg",result.getnama_brg);
+            intent.putExtra("intent_keterangan", result.getketeranga);
+            intent.putExtra("intent_kategori", result.getketegori);
+            intent.putExtra("intent_harga", result.getherga);
+            intent.putExtra("intent_stok", result.getstok);
+            intent.putExtra("intent_image",result.getimage);
+
+
+
+
+            }
+        });
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mainAdapter);
@@ -48,7 +65,7 @@ public class Dashboard extends AppCompatActivity {
 
     private  void getDataFromApi(){
         progressBar.setVisibility(View.VISIBLE);
-        DBcontract.endpoint().getData()
+        ApiService.endpoint().getData()
                 .enqueue(new Callback<MainModel>() {
                     @Override
                     public void onResponse(Call<MainModel> call, Response<MainModel> response) {

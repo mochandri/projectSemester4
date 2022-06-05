@@ -20,8 +20,8 @@ public class MainModel {
         private  String nama_brg;
         private  String keterangan;
         private  String kategori;
-        private  String harga;
-        private  String Stok;
+        private  int harga;
+        private  int  Stok;
 
         public int getId() {
             return id;
@@ -55,19 +55,19 @@ public class MainModel {
             this.kategori = kategori;
         }
 
-        public String getHarga() {
+        public int getHarga() {
             return harga;
         }
 
-        public void setHarga(String harga) {
+        public void setHarga(int harga) {
             this.harga = harga;
         }
 
-        public String getStok() {
+        public int getStok() {
             return Stok;
         }
 
-        public void setStok(String stok) {
+        public void setStok(int stok) {
             Stok = stok;
         }
 
@@ -79,8 +79,8 @@ public class MainModel {
                     ", nama_brg='" + nama_brg + '\'' +
                     ", keterangan='" + keterangan + '\'' +
                     ", kategori='" + kategori + '\'' +
-                    ", harga='" + harga + '\'' +
-                    ", Stok='" + Stok + '\'' +
+                    ", harga=" + harga +
+                    ", Stok=" + Stok +
                     '}';
         }
     }
