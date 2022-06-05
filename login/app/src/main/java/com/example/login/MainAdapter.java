@@ -9,15 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
-    private List<MainModel.Result> results = new ArrayList<>();
+    private List<MainModel.Result> results ;
+    private  OnAdapterListener listener ;
 
-    public MainAdapter(List<MainModel.Result> results) {
+    public MainAdapter(List<MainModel.Result> results, OnAdapterListener listener) {
         this.results = results;
+        this.listener = listener;
     }
 
     @NonNull
@@ -32,6 +36,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MainModel.Result result = results.get(position);
         holder.textView.setText( result.getTitle());
+        Picasso.get()
+                .load(result.getImage())
+                .fit().centerCrop()
+                .into(holder.imageView);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(result);
+            }
+        });
 
     }
 
@@ -57,6 +71,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         results.clear();
         results.addAll(data);
         notifyDataSetChanged();
+    }
+    interface OnAdapterListener{
+        void onClick(MainModel.Result result);
     }
 }
 
