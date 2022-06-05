@@ -20,8 +20,10 @@
         <entry key="..\:/Users/andre/AndroidStudioProjects/login/app/src/main/res/layout/fragment_dashboard2.xml" value="0.21195652173913043" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/login/app/src/main/res/layout/fragment_home.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/login/app/src/main/res/layout/fragment_notifications.xml" value="0.18541666666666667" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_detail.xml" value="0.20364583333333333" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/adapter_main.xml" value="0.5" />
       </map>
     </option>
   </component>

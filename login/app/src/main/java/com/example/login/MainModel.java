@@ -5,7 +5,7 @@ import java.util.List;
 import javax.xml.transform.Result;
 
 public class MainModel {
-    public class  result{
+
         private List<Result> result;
 
         public List<Result> getResult() {
@@ -13,8 +13,10 @@ public class MainModel {
         }
 
         public void setResult(List<Result> result) {
+
             this.result = result;
         }
+    public class  Result{
 
         private int id;
         private  String nama_brg;
@@ -22,6 +24,7 @@ public class MainModel {
         private  String kategori;
         private  int harga;
         private  int  Stok;
+        private String gambar;
 
         public int getId() {
             return id;
@@ -71,16 +74,24 @@ public class MainModel {
             Stok = stok;
         }
 
+        public String getGambar() {
+            return gambar;
+        }
+
+        public void setGambar(String gambar) {
+            this.gambar = gambar;
+        }
+
         @Override
         public String toString() {
-            return "result{" +
-                    "result=" + result +
-                    ", id=" + id +
+            return "Result{" +
+                    "id=" + id +
                     ", nama_brg='" + nama_brg + '\'' +
                     ", keterangan='" + keterangan + '\'' +
                     ", kategori='" + kategori + '\'' +
                     ", harga=" + harga +
                     ", Stok=" + Stok +
+                    ", gambar='" + gambar + '\'' +
                     '}';
         }
     }

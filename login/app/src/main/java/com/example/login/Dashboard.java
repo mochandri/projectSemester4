@@ -9,7 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+
+import com.example.login.retrofit.ApiService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,12 +47,12 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(MainModel.Result result) {
 
                 Intent intent = new Intent(Dashboard.this,DetailActivity.class);
-            intent.putExtra("intent_nama_brg",result.getnama_brg);
-            intent.putExtra("intent_keterangan", result.getketeranga);
-            intent.putExtra("intent_kategori", result.getketegori);
-            intent.putExtra("intent_harga", result.getherga);
-            intent.putExtra("intent_stok", result.getstok);
-            intent.putExtra("intent_image",result.getimage);
+            intent.putExtra("intent_nama_brg",result.getNama_brg());
+            intent.putExtra("intent_keterangan", result.getKeterangan());
+            intent.putExtra("intent_kategori", result.getKategori());
+            intent.putExtra("intent_harga", result.getHarga());
+            intent.putExtra("intent_stok", result.getStok());
+            intent.putExtra("intent_image",result.getGambar());
 
 
 

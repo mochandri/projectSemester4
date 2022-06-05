@@ -35,9 +35,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MainModel.Result result = results.get(position);
-        holder.textView.setText( result.getTitle());
+        holder.textView.setText( result.getNama_brg());
         Picasso.get()
-                .load(result.getImage())
+                .load(result.getGambar())
                 .fit().centerCrop()
                 .into(holder.imageView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {

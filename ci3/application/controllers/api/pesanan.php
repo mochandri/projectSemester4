@@ -116,20 +116,20 @@ class pesanan extends REST_Controller {
         $this->set_response($message, REST_Controller::HTTP_NO_CONTENT); // NO_CONTENT (204) being the HTTP response code
     }
 
-    public function index_put(){
-        $where = array(
-            "id"=>$this->put("id")
-        );
+    // public function index_put(){
+    //     $where = array(
+    //         "id"=>$this->put("id")
+    //     );
 
-        $data=array(
-            "nama" => $this->put("nama"),
-            "alamat" => $this->put("alamat"),
-            "tgl_pesan" => $this->put("tgl_pesan"),
-            "batas_bayar" => $this->put("batas_bayar")
-        );
-        $this->db->update("tb_invoice",$data,$where);
-        $this->set_response($data,REST_Controller::HTTP_CREATED);
+    //     $data=array(
+    //         "nama" => $this->put("nama"),
+    //         "alamat" => $this->put("alamat"),
+    //         "tgl_pesan" => $this->put("tgl_pesan"),
+    //         "batas_bayar" => $this->put("batas_bayar")
+    //     );
+    //     $this->db->update("tb_invoice",$data,$where);
+    //     $this->set_response($data,REST_Controller::HTTP_CREATED);
 
-    }
+    // }
 
 }

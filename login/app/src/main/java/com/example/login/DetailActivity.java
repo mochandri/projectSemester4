@@ -17,9 +17,9 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        String nama_brg = getIntent(),getStringExtra("intent_nama_brg");
-        String image = getIntent(),getStringExtra("intent_image");
-        getSupportActionBar().setTitle(title);
+        String nama_brg = getIntent().getStringExtra("intent_nama_brg");
+        String image = getIntent().getStringExtra("intent_image");
+        getSupportActionBar().setTitle(nama_brg);
         Picasso.get()
                 .load(image)
                 .into((ImageView) findViewById(R.id.imageView));
