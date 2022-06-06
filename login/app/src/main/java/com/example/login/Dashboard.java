@@ -37,6 +37,13 @@ public class Dashboard extends AppCompatActivity {
         getDataFromApi();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        showLoading(false);
+        getDataFromApi();
+    }
+
     private void setupView() {
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
