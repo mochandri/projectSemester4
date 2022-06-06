@@ -53,6 +53,7 @@ public class Dashboard extends AppCompatActivity {
 //            intent.putExtra("intent_harga", result.getHarga());
 //            intent.putExtra("intent_stok", result.getStok());
             intent.putExtra("intent_image",result.getGambar_url());
+            startActivity(intent);
 
 
 
@@ -71,7 +72,7 @@ public class Dashboard extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<MainModel> call, Response<MainModel> response) {
                         showLoading( false );
-                        Log.d( TAG, "onResponse: " + response.toString());
+                        Log.d( TAG, "Result" + response.toString());
                         if (response.isSuccessful()) {
                             List<MainModel.Result> results = response.body().getResult();
                             Log.d(TAG, results.toString());

@@ -23,17 +23,9 @@ public class MainModel {
         private  String keterangan;
         private  String kategori;
         private  int harga;
-        private  int  Stok;
+        private  int  stok;
         private String gambar;
         private String gambar_url;
-
-        public String getGambar_url() {
-            return gambar_url;
-        }
-
-        public void setGambar_url(String gambar_url) {
-            this.gambar_url = gambar_url;
-        }
 
         public int getId_brg() {
             return id_brg;
@@ -76,11 +68,11 @@ public class MainModel {
         }
 
         public int getStok() {
-            return Stok;
+            return stok;
         }
 
         public void setStok(int stok) {
-            Stok = stok;
+            this.stok = stok;
         }
 
         public String getGambar() {
@@ -91,6 +83,14 @@ public class MainModel {
             this.gambar = gambar;
         }
 
+        public String getGambar_url() {
+            return gambar_url;
+        }
+
+        public void setGambar_url(String gambar_url) {
+            this.gambar_url = gambar_url;
+        }
+
         @Override
         public String toString() {
             return "Result{" +
@@ -99,7 +99,7 @@ public class MainModel {
                     ", keterangan='" + keterangan + '\'' +
                     ", kategori='" + kategori + '\'' +
                     ", harga=" + harga +
-                    ", Stok=" + Stok +
+                    ", stok=" + stok +
                     ", gambar='" + gambar + '\'' +
                     ", gambar_url='" + gambar_url + '\'' +
                     '}';

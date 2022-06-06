@@ -1,5 +1,6 @@
 package com.example.login;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +19,17 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private List<MainModel.Result> results ;
     private  OnAdapterListener listener ;
+    private Context context;
 
     public MainAdapter(List<MainModel.Result> results, OnAdapterListener listener) {
         this.results = results;
+        this.context =context;
         this.listener = listener;
     }
 
     @NonNull
     @Override
-    public MainAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MainAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         return new ViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_main, parent, false)
         );
@@ -37,12 +40,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         MainModel.Result result = results.get(position);
         holder.textView.setText( result.getNama_brg());
         Picasso.get()
-                .load(result.getGambar())
+                .load(result.getGambar_url())
                 .fit().centerCrop()
                 .into(holder.imageView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 listener.onClick(result);
             }
         });
@@ -51,7 +54,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return results.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -67,9 +70,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
         }
     }
-    public void setData(List<MainModel.Result> data){
+    public void setData(List<MainModel.Result> newResults){
         results.clear();
-        results.addAll(data);
+        results.addAll(newResults);
         notifyDataSetChanged();
     }
     interface OnAdapterListener{
