@@ -68,6 +68,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             imageView = itemView.findViewById(R.id.imageView);
             textView = itemView.findViewById(R.id.textView);
 
+
         }
     }
     public void setData(List<MainModel.Result> newResults){
