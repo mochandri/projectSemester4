@@ -131,7 +131,24 @@
                             </div>
                         </li>
 
+                        
                     </ul>
+                    <div class="navbar">
+                        
+                            
+
+                                <ul class="na navbar-nav navbar-right">
+                                <?php if($this->session->userdata('username')) { ?>
+                                    <li><div>Selamat Datang <?php echo $this->session->userdata('username') ?></div></li>
+                                    <li class="ml-2"><?php echo anchor ('auth/logout','Logout'); ?></li>
+                                    <?php } else { ?>
+                                    <li><?php echo anchor ('auth/login', 'Login'); ?></li>
+                                    <?php }?>
+                        
+
+                                    </ul>
+                            
+                        </div>
 
                 </nav>
                 <!-- End of Topbar -->
