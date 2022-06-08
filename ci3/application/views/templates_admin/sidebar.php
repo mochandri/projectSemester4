@@ -131,9 +131,7 @@
                             </div>
                         </li>
 
-                        
-                    </ul>
-                    <div class="navbar">
+                        <div class="navbar">
                         
                             
 
@@ -149,6 +147,7 @@
                                     </ul>
                             
                         </div>
+                    </ul>
 
                 </nav>
                 <!-- End of Topbar -->

@@ -27,6 +27,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         this.listener = listener;
     }
 
+    public MainAdapter(List<MainModel.Result> results) {
+    }
+
     @NonNull
     @Override
     public MainAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
@@ -38,7 +41,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MainModel.Result result = results.get(position);
-        holder.textView.setText( result.getNama_brg());
+        holder.textView.setText(result.getNama_brg());
+        holder.textView2.setId(result.getHarga());
         Picasso.get()
                 .load(result.getGambar_url())
                 .fit().centerCrop()
@@ -60,13 +64,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textView;
+        TextView textView, textView2;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
             textView = itemView.findViewById(R.id.textView);
+            textView2 = itemView.findViewById(R.id.textView2);
 
 
         }

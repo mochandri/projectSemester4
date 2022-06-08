@@ -53,12 +53,12 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(MainModel.Result result) {
 
-                Intent intent = new Intent(Dashboard.this,DetailActivity.class);
+                Intent intent = new Intent(Dashboard.this, DetailActivity.class);
             intent.putExtra("intent_nama_brg",result.getNama_brg());
             intent.putExtra("intent_keterangan", result.getKeterangan());
 //            intent.putExtra("intent_kategori", result.getKategori());
-//            intent.putExtra("intent_harga", result.getHarga());
-//            intent.putExtra("intent_stok", result.getStok());
+//            intent.putExtra("intent_harga",result.getHarga());
+            intent.putExtra("intent_stok", result.getStok());
             intent.putExtra("intent_image",result.getGambar_url());
             startActivity(intent);
 

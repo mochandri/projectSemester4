@@ -8,23 +8,41 @@
     android:background="@android:color/darker_gray"
     android:paddingBottom="5dp"
     >
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        >
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            tools:src="@drawable/img_placeholder"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="178dp"
+            android:layout_height="199dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/img_placeholder" />
 
         <TextView
             android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:shadowColor="@color/black"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1"
+            tools:text="Lorem Ipsum" />
+
+
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -33,8 +51,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.444"
-            tools:text="Lorem Ipsum" />
-
+            tools:text="Harga" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
