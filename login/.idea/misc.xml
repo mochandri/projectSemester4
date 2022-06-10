@@ -20,12 +20,17 @@
         <entry key="..\:/Users/andre/AndroidStudioProjects/login/app/src/main/res/layout/fragment_dashboard2.xml" value="0.21195652173913043" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/login/app/src/main/res/layout/fragment_home.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/login/app/src/main/res/layout/fragment_notifications.xml" value="0.18541666666666667" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/drawable-v24/ic_dashboard.xml" value="0.1" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/drawable-v24/ic_logout.xml" value="0.1" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/drawable-v24/ic_shopping.xml" value="0.1" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_dashboard.xml" value="0.35874439461883406" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_detail.xml" value="0.5" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_fragment_layout.xml" value="0.33" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_login2.xml" value="0.18541666666666667" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_splash.xml" value="0.24003623188405798" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/adapter_main.xml" value="0.1" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
