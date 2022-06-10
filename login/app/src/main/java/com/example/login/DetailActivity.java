@@ -26,12 +26,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         mainAdapter = new MainAdapter (results);
-        textViewNama = (findViewById(R.id.textViewDetailNama));
-        textViewKeterangan = (findViewById(R.id.textViewKeterangan));
-        textViewHarga = (findViewById(R.id.textViewHarga));
+        textViewNama = (findViewById(R.id.tv_namaDetail));
+        textViewKeterangan = (findViewById(R.id.tv_deskripsi));
+        textViewHarga = (findViewById(R.id.tv_hargaDetail));
 
         String nama_brg = getIntent().getStringExtra("intent_nama_brg");
-//        String harga = getIntent().getStringExtra("intent_stok");
+//        String harga = getIntent().getStringExtra("intent_harga");
         String keterangan = getIntent().getStringExtra("intent_keterangan");
         String image = getIntent().getStringExtra("intent_image");
         textViewNama.setText(nama_brg);

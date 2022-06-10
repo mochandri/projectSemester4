@@ -42,7 +42,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MainModel.Result result = results.get(position);
         holder.textView.setText(result.getNama_brg());
-        holder.textView2.setId(result.getHarga());
+        holder.textViewHarga.setInputType(result.getHarga());
         Picasso.get()
                 .load(result.getGambar_url())
                 .fit().centerCrop()
@@ -64,15 +64,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textView, textView2;
+        TextView textView, textViewHarga;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
-            textView = itemView.findViewById(R.id.textView);
-            textView2 = itemView.findViewById(R.id.textView2);
-
+            textView = itemView.findViewById(R.id.tv_nama);
+            textViewHarga = itemView.findViewById(R.id.tv_harga);
 
         }
     }
