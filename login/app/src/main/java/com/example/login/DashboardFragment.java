@@ -1,64 +1,106 @@
 package com.example.login;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DashboardFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class DashboardFragment extends Fragment {
+import com.example.login.retrofit.ApiService;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import java.util.ArrayList;
+import java.util.List;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    public DashboardFragment() {
-        // Required empty public constructor
-    }
+public class DashboardFragment extends AppCompatActivity {
+    private  final String TAG = "Dashboard";
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DashboardFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DashboardFragment newInstance(String param1, String param2) {
-        DashboardFragment fragment = new DashboardFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    private RecyclerView recyclerView;
+    private ProgressBar progressBar;
+    private MainAdapter mainAdapter;
+
+    private List<MainModel.Result> results = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dashboard);
+        setupView();
+        setupRecyclerView();
+        getDataFromApi();
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    protected void onStart() {
+        super.onStart();
+        showLoading(false);
+        getDataFromApi();
+    }
+
+    private void setupView() {
+        recyclerView = findViewById(R.id.recyclerView);
+        progressBar = findViewById(R.id.progressBar);
+    }
+    private void setupRecyclerView(){
+        mainAdapter = new MainAdapter(results, new MainAdapter.OnAdapterListener() {
+            @Override
+            public void onClick(MainModel.Result result) {
+
+                Intent intent = new Intent(DashboardFragment.this, DetailActivity.class);
+                intent.putExtra("intent_nama_brg",result.getNama_brg());
+                intent.putExtra("intent_keterangan", result.getKeterangan());
+//            intent.putExtra("intent_kategori", result.getKategori());
+                intent.putExtra("intent_harga",result.getHarga());
+                intent.putExtra("intent_stok", result.getStok());
+                intent.putExtra("intent_image",result.getGambar_url());
+                startActivity(intent);
+
+
+
+
+            }
+        });
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(mainAdapter);
+    }
+
+    private void getDataFromApi() {
+        showLoading( true );
+        ApiService.endpoint().getData()
+                .enqueue(new Callback<MainModel>() {
+                    @Override
+                    public void onResponse(Call<MainModel> call, Response<MainModel> response) {
+                        showLoading( false );
+                        Log.d( TAG, "Result" + response.toString());
+                        if (response.isSuccessful()) {
+                            List<MainModel.Result> results = response.body().getResult();
+                            Log.d(TAG, results.toString());
+                            mainAdapter.setData( results );
+
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<MainModel> call, Throwable t) {
+                        showLoading( false );
+                        Log.d( TAG, t.toString());
+                    }
+                });
+    }
+    private void showLoading(Boolean loading) {
+        if (loading) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false);
-    }
+
 }

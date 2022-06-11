@@ -28,26 +28,19 @@
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.261" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_detail.xml" value="0.4223013048635824" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_fragment_layout.xml" value="0.18541666666666667" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_login2.xml" value="0.18541666666666667" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_pembayaran.xml" value="0.37083333333333335" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_splash.xml" value="0.24003623188405798" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/adapter_main.xml" value="0.33" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/fragment_dashboard.xml" value="0.24547101449275363" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/fragment_keranjang.xml" value="0.18541666666666667" />
+        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/fragment_logout.xml" value="0.18541666666666667" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/item_keranjang.xml" value="0.33" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/itm_keranjang.xml" value="0.3625" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/toolbar_custom.xml" value="0.18541666666666667" />
         <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
-
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/drawable-v24/ic_dashboard.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/drawable-v24/ic_logout.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/drawable-v24/ic_shopping.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_dashboard.xml" value="0.35874439461883406" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_detail.xml" value="0.5" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_fragment_layout.xml" value="0.33" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_login2.xml" value="0.18541666666666667" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/activity_splash.xml" value="0.24003623188405798" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/layout/adapter_main.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/projectSemester4/login/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

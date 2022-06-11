@@ -1,4 +1,15 @@
 <div class="container-fluid">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="<?php echo base_url('assets/img/slider3.png')?>" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
