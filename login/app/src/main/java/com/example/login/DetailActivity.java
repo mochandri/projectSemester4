@@ -28,7 +28,7 @@ public class DetailActivity extends AppCompatActivity {
         mainAdapter = new MainAdapter (results);
         textViewNama = (findViewById(R.id.tv_namaDetail));
         textViewKeterangan = (findViewById(R.id.tv_deskripsi));
-        textViewHarga = (findViewById(R.id.tv_hargaDetail));
+
 
         String nama_brg = getIntent().getStringExtra("intent_nama_brg");
 //        String harga = getIntent().getStringExtra("intent_harga");

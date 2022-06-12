@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
@@ -42,7 +41,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MainModel.Result result = results.get(position);
         holder.textView.setText(result.getNama_brg());
-        holder.textViewHarga.setInputType(result.getHarga());
         Picasso.get()
                 .load(result.getGambar_url())
                 .fit().centerCrop()
@@ -64,14 +62,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textView, textViewHarga;
+        TextView textView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
             textView = itemView.findViewById(R.id.tv_nama);
-            textViewHarga = itemView.findViewById(R.id.tv_harga);
+
 
         }
     }
